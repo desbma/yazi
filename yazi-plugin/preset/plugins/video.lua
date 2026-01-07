@@ -54,7 +54,7 @@ function M:preload(job)
 
 	local cmd = Command("ffmpeg")
 		:stderr(Command.PIPED)
-		:arg { "-v", "warning", "-hwaccel", "auto", "-threads", 1, "-an", "-sn", "-dn" }
+		:arg { "-v", "warning", "-threads", 1, "-an", "-sn", "-dn" }
 
 	if percent ~= 0 then
 		cmd:arg { "-ss", math.floor(meta.format.duration * percent / 100) }
